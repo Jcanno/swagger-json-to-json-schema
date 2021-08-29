@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./types"
+  },
+  "files": [
+    "index.ts"
+  ]
+}
