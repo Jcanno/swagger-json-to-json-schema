@@ -1,0 +1,36 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "path-level-parameters-2",
+    "version": "v2"
+  },
+  "paths": {
+    "/users/{id}": {
+      "parameters": [{
+        "in": "path",
+        "name": "id",
+        "type": "integer",
+        "required": true,
+        "description": "The user ID."
+      }],
+      "get": {
+        "summary": "Gets a user by ID.",
+        "parameters": [{
+          "in": "query",
+          "name": "metadata",
+          "type": "boolean",
+          "required": false,
+          "description": "If true, the endpoint returns only the user metadata."
+        }],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "consumes": [
+    "application/json"
+  ]
+}

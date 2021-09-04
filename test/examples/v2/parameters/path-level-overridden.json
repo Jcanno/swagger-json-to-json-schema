@@ -1,0 +1,49 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "path-level-overridden",
+    "version": "v2"
+  },
+  "paths": {
+    "/users/{id}": {
+      "parameters": [{
+        "in": "path",
+        "name": "id",
+        "type": "integer",
+        "required": true,
+        "description": "The user ID."
+      }],
+      "delete": {
+        "summary": "Deletes the user with the specified ID.",
+        "responses": {
+          "204": {
+            "description": "User was deleted."
+          }
+        }
+      },
+      "get": {
+        "summary": "Gets one or more users by ID.",
+        "parameters": [{
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "A comma-separated list of user IDs.",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "collectionFormat": "csv",
+          "minItems": 1
+        }],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "consumes": [
+    "application/json"
+  ]
+}

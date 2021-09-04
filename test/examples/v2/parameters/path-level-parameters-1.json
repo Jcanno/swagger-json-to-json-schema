@@ -1,0 +1,51 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "path-level-parameters-1",
+    "version": "v2"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "description": "Returns pets based on ID",
+        "summary": "Find pets by ID",
+        "operationId": "getPetsById",
+        "produces": [
+          "application/json",
+          "text/html"
+        ],
+        "responses": {
+          "200": {
+            "description": "pet response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pet"
+              }
+            }
+          },
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      },
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "ID of pet to use",
+        "required": true,
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "collectionFormat": "csv"
+      }]
+    }
+  },
+  "consumes": [
+    "application/json"
+  ]
+}
