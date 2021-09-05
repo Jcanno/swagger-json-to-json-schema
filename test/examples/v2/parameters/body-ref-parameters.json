@@ -1,0 +1,52 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "body-ref-parameters",
+    "version": "v2"
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "summary": "Creates a new user.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [{
+          "in": "body",
+          "name": "user",
+          "description": "The user to create.",
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "required": [
+        "userName"
+      ],
+      "properties": {
+        "userName": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "consumes": [
+    "application/json"
+  ]
+}
